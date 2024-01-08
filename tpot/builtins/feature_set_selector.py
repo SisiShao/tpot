@@ -53,7 +53,7 @@ class FeatureSetSelector(BaseEstimator, SelectorMixin):
         subset_df = pd.read_csv(self.subset_list, header=0, index_col=0)
         # Reading the subset list file into a pandas DataFrame.
 
-        # Processing the sel_subset attribute to determine the subset of features to use.
+        # Processing the sel_subset attribute to determine the subset of features to use. This chunck gives us the self.sel_subset_name attribute, the row indices.
         if isinstance(self.sel_subset, int):
             self.sel_subset_name = subset_df.index[self.sel_subset]
         elif isinstance(self.sel_subset, str):
